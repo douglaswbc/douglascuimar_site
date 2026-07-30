@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "IA para Imobiliárias",
   description:
     "Qualificação automática de leads, agendamento inteligente de visitas e gestão digital de contratos. Venda mais rápido com IA.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "IA para Imobiliárias | Douglas Cuimar",
     description:
@@ -25,6 +27,17 @@ export default function ImobiliariasPage() {
           areaServed: { "@type": "Country", name: "Brasil" },
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Setores", href: "/setores" }, { label: "IA para Imobiliárias", href: "/setores/imobiliarias" }]} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Quanto tempo para implantar?", acceptedAnswer: { "@type": "Answer", text: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA leva de 10 a 15 dias." } },
+          { "@type": "Question", name: "Funciona com meu CRM?", acceptedAnswer: { "@type": "Answer", text: "Sim. Integramos com os principais CRMs imobiliários do mercado brasileiro." } },
+          { "@type": "Question", name: "Como a IA qualifica os leads?", acceptedAnswer: { "@type": "Answer", text: "O agente analisa intenção, urgência, orçamento e poder de decisão, classificando cada lead automaticamente." } },
+          { "@type": "Question", name: "Quanto custa?", acceptedAnswer: { "@type": "Answer", text: "A partir de R$ 4.997, com mensalidade de MSP a partir de R$ 997 para gestão contínua." } },
+        ]
+      }} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -74,6 +87,64 @@ export default function ImobiliariasPage() {
                 <p className="text-slate-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-20 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-navy mb-8 text-center">
+              Perguntas Frequentes sobre IA para Imobiliárias
+            </h3>
+            <div className="space-y-3">
+              {[
+                {
+                  q: "Quanto tempo para implantar?",
+                  a: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA leva de 10 a 15 dias.",
+                },
+                {
+                  q: "Funciona com meu CRM?",
+                  a: "Sim. Integramos com os principais CRMs imobiliários do mercado brasileiro.",
+                },
+                {
+                  q: "Como a IA qualifica os leads?",
+                  a: "O agente analisa intenção, urgência, orçamento e poder de decisão, classificando cada lead automaticamente.",
+                },
+                {
+                  q: "Quanto custa?",
+                  a: "A partir de R$ 4.997, com mensalidade de MSP a partir de R$ 997 para gestão contínua.",
+                },
+              ].map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group bg-surface-alt rounded-2xl border border-slate-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-navy font-semibold list-none">
+                    {faq.q}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="flex-shrink-0 ml-4 transition-transform group-open:rotate-45"
+                    >
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-4 text-slate-500 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-16 mb-8">
+            <p className="text-slate-400 text-sm mb-3">Quer se aprofundar?</p>
+            <Link
+              href="/blog/sdr-virtual-com-ia"
+              className="text-navy font-bold hover:text-emerald transition-colors"
+            >
+              Leia o artigo completo sobre este tema →
+            </Link>
           </div>
 
           <div className="text-center">

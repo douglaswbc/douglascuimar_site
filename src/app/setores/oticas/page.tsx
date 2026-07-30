@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "IA para Óticas",
   description:
     "Agendamento inteligente, lembretes de retorno e campanhas personalizadas para óticas. Aumente o ticket médio e fidelize clientes com IA.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "IA para Óticas | Douglas Cuimar",
     description:
@@ -25,6 +27,17 @@ export default function OticasPage() {
           areaServed: { "@type": "Country", name: "Brasil" },
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Setores", href: "/setores" }, { label: "IA para Óticas", href: "/setores/oticas" }]} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Quanto tempo leva para implantar IA na minha ótica?", acceptedAnswer: { "@type": "Answer", text: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA, incluindo integração com sistema de gestão e WhatsApp, leva de 10 a 15 dias." } },
+          { "@type": "Question", name: "Preciso trocar meu sistema de gestão?", acceptedAnswer: { "@type": "Answer", text: "Não. Integramos com ERPs de varejo e sistemas de agendamento que você já usa, incluindo sistemas legados." } },
+          { "@type": "Question", name: "As campanhas personalizadas realmente funcionam?", acceptedAnswer: { "@type": "Answer", text: "Sim. Clientes que recebem campanhas baseadas no histórico de compras têm 3x mais chance de retornar à sua ótica." } },
+          { "@type": "Question", name: "Quanto custa?", acceptedAnswer: { "@type": "Answer", text: "A partir de R$ 2.997 (Automação Express) ou R$ 4.997 (Agente completo), com mensalidade de MSP a partir de R$ 997 para gestão contínua. O retorno médio é de 6x o investimento em 12 meses." } },
+        ]
+      }} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -73,6 +86,64 @@ export default function OticasPage() {
                 <p className="text-slate-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-20 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-navy mb-8 text-center">
+              Perguntas Frequentes sobre IA para Óticas
+            </h3>
+            <div className="space-y-3">
+              {[
+                {
+                  q: "Quanto tempo leva para implantar IA na minha ótica?",
+                  a: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA, incluindo integração com sistema de gestão e WhatsApp, leva de 10 a 15 dias.",
+                },
+                {
+                  q: "Preciso trocar meu sistema de gestão?",
+                  a: "Não. Integramos com ERPs de varejo e sistemas de agendamento que você já usa, incluindo sistemas legados.",
+                },
+                {
+                  q: "As campanhas personalizadas realmente funcionam?",
+                  a: "Sim. Clientes que recebem campanhas baseadas no histórico de compras têm 3x mais chance de retornar à sua ótica.",
+                },
+                {
+                  q: "Quanto custa?",
+                  a: "A partir de R$ 2.997 (Automação Express) ou R$ 4.997 (Agente completo), com mensalidade de MSP a partir de R$ 997 para gestão contínua. O retorno médio é de 6x o investimento em 12 meses.",
+                },
+              ].map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group bg-surface-alt rounded-2xl border border-slate-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-navy font-semibold list-none">
+                    {faq.q}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="flex-shrink-0 ml-4 transition-transform group-open:rotate-45"
+                    >
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-4 text-slate-500 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-16 mb-8">
+            <p className="text-slate-400 text-sm mb-3">Quer se aprofundar?</p>
+            <Link
+              href="/blog/quanto-custa-implantar-ia"
+              className="text-navy font-bold hover:text-emerald transition-colors"
+            >
+              Leia o artigo completo sobre este tema →
+            </Link>
           </div>
 
           <div className="text-center">

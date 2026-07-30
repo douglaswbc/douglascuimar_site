@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Sobre",
   description:
     "Douglas Cuimar — Estrategista em automação de processos e integração de sistemas com IA. n8n Expert e especialista em IA Generativa.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "Sobre Douglas Cuimar",
     description:
@@ -39,6 +41,7 @@ export default function SobrePage() {
   return (
     <>
       <JsonLd data={personSchema} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Sobre", href: "/sobre" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-surface-alt">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

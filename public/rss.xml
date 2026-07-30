@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Douglas Cuimar — Blog</title>
+    <link>https://douglascuimar.com.br/blog</link>
+    <description>Artigos práticos sobre IA, automação empresarial, integração de sistemas e produtividade para PMEs.</description>
+    <language>pt-BR</language>
+    <lastBuildDate>Tue, 30 Jul 2026 22:00:00 -0300</lastBuildDate>
+    <atom:link href="https://douglascuimar.com.br/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Como automatizar o atendimento de uma clínica com IA</title>
+      <link>https://douglascuimar.com.br/blog/como-automatizar-clinica-com-ia</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/como-automatizar-clinica-com-ia</guid>
+      <description>Descubra como reduzir faltas em até 40% e liberar sua equipe administrativa com automação inteligente de confirmação e pré-atendimento.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Tue, 15 Jul 2026 22:00:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Como integrar WhatsApp ao CRM da sua empresa</title>
+      <link>https://douglascuimar.com.br/blog/integrar-whatsapp-ao-crm</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/integrar-whatsapp-ao-crm</guid>
+      <description>Guia prático para conectar o WhatsApp Business ao seu CRM usando n8n. Elimine a digitação manual e ganhe velocidade no atendimento.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Fri, 20 Jun 2026 22:00:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Como reduzir o tempo de atendimento em 60% com IA</title>
+      <link>https://douglascuimar.com.br/blog/reduzir-tempo-atendimento-com-ia</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/reduzir-tempo-atendimento-com-ia</guid>
+      <description>Cases reais de empresas que implementaram agentes de IA no atendimento e transformaram a experiência do cliente.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Tue, 10 Jun 2026 22:00:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Como criar um SDR virtual com IA</title>
+      <link>https://douglascuimar.com.br/blog/sdr-virtual-com-ia</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/sdr-virtual-com-ia</guid>
+      <description>Aprenda a configurar um SDR inteligente que qualifica leads, agenda reuniões e faz follow-up automático 24 horas por dia.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Sun, 25 May 2026 22:00:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Quanto custa implantar IA em uma empresa?</title>
+      <link>https://douglascuimar.com.br/blog/quanto-custa-implantar-ia</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/quanto-custa-implantar-ia</guid>
+      <description>Guia completo de investimento: do diagnóstico inicial ao MSP de IA. Valores reais e estimativa de ROI por setor.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Thu, 15 May 2026 22:00:00 -0300</pubDate>
+    </item>
+    <item>
+      <title>Meta Business Agent vs Agente de IA Personalizado</title>
+      <link>https://douglascuimar.com.br/blog/meta-business-agent-vs-agente-personalizado</link>
+      <guid isPermaLink="true">https://douglascuimar.com.br/blog/meta-business-agent-vs-agente-personalizado</guid>
+      <description>Comparativo técnico: quando usar a solução nativa da Meta e quando investir em um agente de IA customizado para seu negócio.</description>
+      <author>contato@douglascuimar.com.br (Douglas Cuimar)</author>
+      <pubDate>Sun, 20 Apr 2026 22:00:00 -0300</pubDate>
+    </item>
+  </channel>
+</rss>

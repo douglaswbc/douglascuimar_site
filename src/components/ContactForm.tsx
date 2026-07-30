@@ -22,7 +22,7 @@ export function ContactForm() {
 
     try {
       const res = await fetch(
-        "https://webhook.autofunil.com.br/webhook/eabe18a9-3165-49f0-b929-784c3951a7ed",
+        "https://webhook.autofunil.com.br/webhook/form-contact-site-dc-labs-br",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Douglas Cuimar — Automação e IA para PMEs",
+  "url": "https://douglascuimar.com.br",
+  "description": "Implantamos Inteligência Artificial que atende clientes, automatiza processos e integra seus sistemas. Especialistas em n8n, agentes de IA e integração de sistemas para PMEs no Brasil.",
+  "author": {
+    "@type": "Person",
+    "name": "Douglas Cuimar"
+  },
+  "lastModified": "2026-07-30",
+  "pages": [
+    { "path": "/", "title": "Douglas Cuimar | Automação e IA para Empresas", "description": "Sua empresa perde tempo com tarefas repetitivas? Implantamos IA para automatizar processos e aumentar a produtividade.", "type": "Homepage" },
+    { "path": "/servicos", "title": "Serviços", "description": "Do diagnóstico à operação autônoma: Diagnóstico de IA, Automação Express, Agentes Inteligentes e MSP de IA.", "type": "ServicesPage" },
+    { "path": "/setores", "title": "Setores", "description": "Soluções de IA e automação para clínicas, óticas, advogados, contabilidade, imobiliárias.", "type": "CollectionPage" },
+    { "path": "/setores/clinicas", "title": "IA para Clínicas", "description": "Reduza faltas em até 40% com IA. Confirmação automática, recuperação de pacientes e pré-atendimento inteligente.", "type": "ServicePage" },
+    { "path": "/setores/oticas", "title": "IA para Óticas", "description": "Aumente o ticket médio com IA para vendas. Agendamento inteligente, lembretes e campanhas.", "type": "ServicePage" },
+    { "path": "/setores/advogados", "title": "IA para Advogados", "description": "Triagem automática de casos e atendimento 24/7 com IA para escritórios de advocacia.", "type": "ServicePage" },
+    { "path": "/setores/contabilidade", "title": "IA para Contabilidade", "description": "Reduza o trabalho manual em até 70% com IA para escritórios contábeis.", "type": "ServicePage" },
+    { "path": "/setores/imobiliarias", "title": "IA para Imobiliárias", "description": "Venda mais rápido com IA para imobiliárias. Qualificação de leads e agendamento de visitas.", "type": "ServicePage" },
+    { "path": "/blog", "title": "Blog", "description": "Centro de conhecimento sobre IA, automação empresarial, integração de sistemas e produtividade. Artigos práticos para PMEs.", "type": "Blog" },
+    { "path": "/blog/como-automatizar-clinica-com-ia", "title": "Como automatizar o atendimento de uma clínica com IA", "description": "Descubra como reduzir faltas em até 40% e liberar sua equipe administrativa com automação inteligente.", "type": "Article", "datePublished": "2026-07-15" },
+    { "path": "/blog/integrar-whatsapp-ao-crm", "title": "Como integrar WhatsApp ao CRM da sua empresa", "description": "Guia prático para conectar o WhatsApp Business ao seu CRM usando n8n.", "type": "Article", "datePublished": "2026-06-20" },
+    { "path": "/blog/reduzir-tempo-atendimento-com-ia", "title": "Como reduzir o tempo de atendimento em 60% com IA", "description": "Cases reais de empresas que implementaram agentes de IA no atendimento.", "type": "Article", "datePublished": "2026-06-10" },
+    { "path": "/blog/sdr-virtual-com-ia", "title": "Como criar um SDR virtual com IA", "description": "Aprenda a configurar um SDR inteligente que qualifica leads e agenda reuniões automaticamente.", "type": "Article", "datePublished": "2026-05-25" },
+    { "path": "/blog/quanto-custa-implantar-ia", "title": "Quanto custa implantar IA em uma empresa?", "description": "Guia completo de investimento: do diagnóstico ao MSP de IA. Valores reais e ROI.", "type": "Article", "datePublished": "2026-05-15" },
+    { "path": "/blog/meta-business-agent-vs-agente-personalizado", "title": "Meta Business Agent vs Agente de IA Personalizado", "description": "Comparativo técnico: quando usar a solução nativa da Meta e quando investir em agente customizado.", "type": "Article", "datePublished": "2026-04-20" },
+    { "path": "/sobre", "title": "Sobre", "description": "Douglas Cuimar — n8n Expert e especialista em IA Generativa e automação para PMEs.", "type": "AboutPage" },
+    { "path": "/faq", "title": "FAQ", "description": "Perguntas frequentes sobre custo, prazo e funcionamento dos serviços de IA e automação.", "type": "FAQPage" },
+    { "path": "/contato", "title": "Contato", "description": "Solicite um diagnóstico gratuito. WhatsApp, email e formulário de contato.", "type": "ContactPage" },
+    { "path": "/recursos", "title": "Recursos", "description": "Materiais gratuitos: calculadora de ROI, checklist de processos, guias e templates.", "type": "CollectionPage" },
+    { "path": "/privacidade", "title": "Política de Privacidade", "description": "Como tratamos seus dados pessoais de acordo com a LGPD.", "type": "WebPage" },
+    { "path": "/termos", "title": "Termos de Uso", "description": "Condições para utilização dos nossos serviços de automação e IA.", "type": "WebPage" }
+  ]
+}

@@ -22,6 +22,15 @@ export function GET() {
 - [IA para Contabilidade](https://douglascuimar.com.br/setores/contabilidade): Coleta de documentos, conciliação e emissão de guias.
 - [IA para Imobiliárias](https://douglascuimar.com.br/setores/imobiliarias): Qualificação de leads, visitas e contratos.
 
+## Blog
+
+- [Como automatizar o atendimento de uma clínica com IA](https://douglascuimar.com.br/blog/como-automatizar-clinica-com-ia): Redução de faltas, confirmação automática e pré-atendimento inteligente.
+- [Como integrar WhatsApp ao CRM](https://douglascuimar.com.br/blog/integrar-whatsapp-ao-crm): Guia prático com n8n para eliminar digitação manual.
+- [Como reduzir o tempo de atendimento em 60% com IA](https://douglascuimar.com.br/blog/reduzir-tempo-atendimento-com-ia): Cases reais de agentes de IA no atendimento.
+- [Como criar um SDR virtual com IA](https://douglascuimar.com.br/blog/sdr-virtual-com-ia): Qualificação de leads e follow-up automático 24/7.
+- [Quanto custa implantar IA em uma empresa?](https://douglascuimar.com.br/blog/quanto-custa-implantar-ia): Guia completo de investimento e ROI por setor.
+- [Meta Business Agent vs Agente de IA Personalizado](https://douglascuimar.com.br/blog/meta-business-agent-vs-agente-personalizado): Comparativo técnico e quando investir.
+
 ## Conteúdo
 
 - [Blog](https://douglascuimar.com.br/blog): Centro de conhecimento sobre IA e automação para PMEs.
@@ -29,6 +38,8 @@ export function GET() {
 - [Recursos](https://douglascuimar.com.br/recursos): Guias, planilhas e materiais gratuitos.
 - [Sobre](https://douglascuimar.com.br/sobre): Quem é Douglas Cuimar — n8n Expert e especialista em IA Generativa.
 - [Contato](https://douglascuimar.com.br/contato): Solicite um diagnóstico gratuito.
+- [RSS do Blog](https://douglascuimar.com.br/rss.xml)
+- [Sitemap](https://douglascuimar.com.br/sitemap.xml)
 
 ## Contato
 

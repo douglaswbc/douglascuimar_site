@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Setores",
   description:
     "Soluções de IA e automação para clínicas, óticas, advogados, contabilidade, imobiliárias e mais. Cada setor com casos de uso específicos.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "IA por Setor | Douglas Cuimar",
     description:
@@ -88,6 +90,7 @@ export default function SetoresPage() {
             "Soluções de IA e automação para diferentes setores empresariais.",
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Setores", href: "/setores" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-surface-alt">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">

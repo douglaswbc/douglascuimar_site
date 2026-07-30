@@ -19,6 +19,13 @@ export const metadata: Metadata = {
   description:
     "Implantamos Inteligência Artificial que atende clientes, automatiza processos e integra seus sistemas para aumentar a produtividade. Especialistas em IA para PMEs.",
   metadataBase: new URL("https://douglascuimar.com.br"),
+  alternates: {
+    canonical: "./",
+    types: {
+      "application/rss+xml": "https://douglascuimar.com.br/rss.xml",
+      "application/json": "https://douglascuimar.com.br/indice-conteudo.json",
+    },
+  },
   keywords: [
     "automação empresarial",
     "inteligência artificial",
@@ -41,7 +48,7 @@ export const metadata: Metadata = {
       "Implantamos Inteligência Artificial que atende clientes, automatiza processos e integra seus sistemas para aumentar a produtividade.",
     images: [
       {
-        url: "/og-image.png",
+         url: "/og-image.svg",
         width: 1200,
         height: 630,
         alt: "Douglas Cuimar - Automação e IA",
@@ -53,7 +60,7 @@ export const metadata: Metadata = {
     title: "Douglas Cuimar | Automação e IA para Empresas",
     description:
       "Implantamos Inteligência Artificial que atende clientes, automatiza processos e integra seus sistemas.",
-    images: ["/og-image.png"],
+     images: ["/og-image.svg"],
   },
   robots: {
     index: true,
@@ -132,6 +139,24 @@ const organizationSchema = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Douglas Cuimar",
+  url: "https://douglascuimar.com.br",
+  description:
+    "Automação e Inteligência Artificial para PMEs. Agentes de IA, integração de sistemas e workflows automatizados.",
+  inLanguage: "pt-BR",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://douglascuimar.com.br/?s={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -141,6 +166,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <JsonLd data={organizationSchema} />
+        <JsonLd data={websiteSchema} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

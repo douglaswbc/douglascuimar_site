@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Recursos",
   description:
     "Materiais gratuitos sobre automação e IA: guias, planilhas de ROI, checklist de processos e mais recursos para PMEs.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "Recursos Gratuitos | Douglas Cuimar",
     description:
@@ -58,6 +60,7 @@ export default function RecursosPage() {
             "Materiais gratuitos sobre automação e IA para PMEs.",
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Recursos", href: "/recursos" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">

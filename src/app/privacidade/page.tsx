@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
     "Política de privacidade do site Douglas Cuimar. Saiba como coletamos, usamos e protegemos seus dados.",
+  alternates: { canonical: "./" },
   robots: { index: true, follow: false },
 };
 
 export default function PrivacidadePage() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Política de Privacidade", href: "/privacidade" }]} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Política de Privacidade | Douglas Cuimar",
+        description: "Política de Privacidade do site Douglas Cuimar. Saiba como tratamos seus dados pessoais de acordo com a LGPD.",
+        url: "https://douglascuimar.com.br/privacidade",
+        dateModified: "2026-07-30",
+      }} />
+
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Link

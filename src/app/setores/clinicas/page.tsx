@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "IA para Clínicas",
   description:
     "Automatize confirmação de consultas, recuperação de pacientes inativos e pré-atendimento com IA. Reduza faltas em até 40% e libere sua equipe.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "IA para Clínicas | Douglas Cuimar",
     description:
@@ -27,6 +29,17 @@ export default function ClinicasPage() {
             "Soluções de automação e inteligência artificial para clínicas médicas, odontológicas e de saúde.",
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Setores", href: "/setores" }, { label: "IA para Clínicas", href: "/setores/clinicas" }]} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          { "@type": "Question", name: "Quanto tempo leva para implantar a IA na minha clínica?", acceptedAnswer: { "@type": "Answer", text: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA, incluindo integração com seu sistema de agenda e WhatsApp, leva de 10 a 15 dias." } },
+          { "@type": "Question", name: "Preciso trocar meu sistema de agenda atual?", acceptedAnswer: { "@type": "Answer", text: "Não. O agente de IA se integra aos sistemas de agenda mais usados por clínicas brasileiras, incluindo sistemas legados. A integração é feita via API ou automação de tela (RPA)." } },
+          { "@type": "Question", name: "Os pacientes aceitam bem o atendimento por IA?", acceptedAnswer: { "@type": "Answer", text: "Sim. Nossos agentes conversam com linguagem natural e personalizada. A taxa de satisfação é de 91%, maior que atendimento puramente humano em algumas clínicas." } },
+          { "@type": "Question", name: "Quanto custa o serviço?", acceptedAnswer: { "@type": "Answer", text: "O projeto de implantação custa a partir de R$ 4.997, com mensalidade de MSP a partir de R$ 997 para gestão contínua. O retorno médio é de 6x o investimento em 12 meses." } },
+        ]
+      }} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -80,6 +93,64 @@ export default function ClinicasPage() {
                 <p className="text-slate-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-20 max-w-3xl mx-auto">
+            <h3 className="text-2xl font-bold text-navy mb-8 text-center">
+              Perguntas Frequentes sobre IA para Clínicas
+            </h3>
+            <div className="space-y-3">
+              {[
+                {
+                  q: "Quanto tempo leva para implantar a IA na minha clínica?",
+                  a: "O diagnóstico leva de 5 a 7 dias. A implantação completa do agente de IA, incluindo integração com seu sistema de agenda e WhatsApp, leva de 10 a 15 dias.",
+                },
+                {
+                  q: "Preciso trocar meu sistema de agenda atual?",
+                  a: "Não. O agente de IA se integra aos sistemas de agenda mais usados por clínicas brasileiras, incluindo sistemas legados. A integração é feita via API ou automação de tela (RPA).",
+                },
+                {
+                  q: "Os pacientes aceitam bem o atendimento por IA?",
+                  a: "Sim. Nossos agentes conversam com linguagem natural e personalizada. A taxa de satisfação é de 91%, maior que atendimento puramente humano em algumas clínicas.",
+                },
+                {
+                  q: "Quanto custa o serviço?",
+                  a: "O projeto de implantação custa a partir de R$ 4.997, com mensalidade de MSP a partir de R$ 997 para gestão contínua. O retorno médio é de 6x o investimento em 12 meses.",
+                },
+              ].map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group bg-surface-alt rounded-2xl border border-slate-100"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-navy font-semibold list-none">
+                    {faq.q}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="flex-shrink-0 ml-4 transition-transform group-open:rotate-45"
+                    >
+                      <path d="M12 5v14M5 12h14" />
+                    </svg>
+                  </summary>
+                  <p className="px-6 pb-4 text-slate-500 leading-relaxed">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-16 mb-8">
+            <p className="text-slate-400 text-sm mb-3">Quer se aprofundar?</p>
+            <Link
+              href="/blog/como-automatizar-clinica-com-ia"
+              className="text-navy font-bold hover:text-emerald transition-colors"
+            >
+              Leia o artigo completo sobre este tema →
+            </Link>
           </div>
 
           <div className="text-center">

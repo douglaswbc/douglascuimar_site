@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "FAQ — Perguntas Frequentes",
   description:
     "Quanto custa um agente de IA? Funciona no WhatsApp? Preciso trocar meu sistema? Tire suas dúvidas sobre automação e IA.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "FAQ | Douglas Cuimar",
     description:
@@ -65,6 +67,7 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={faqSchema} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "FAQ", href: "/faq" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">

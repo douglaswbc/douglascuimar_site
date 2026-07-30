@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/JsonLd";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description:
     "Termos de uso do site Douglas Cuimar. Condições para utilização do site e serviços.",
+  alternates: { canonical: "./" },
   robots: { index: true, follow: false },
 };
 
 export default function TermosPage() {
   return (
     <>
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Termos de Uso", href: "/termos" }]} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Termos de Uso | Douglas Cuimar",
+        description: "Termos de Uso do site Douglas Cuimar. Condições para utilização dos nossos serviços de automação e IA.",
+        url: "https://douglascuimar.com.br/termos",
+        dateModified: "2026-07-30",
+      }} />
+
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <Link

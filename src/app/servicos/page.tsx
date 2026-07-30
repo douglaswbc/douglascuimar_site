@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Serviços",
   description:
     "Do diagnóstico à operação autônoma: Diagnóstico de IA, Automação Express, Agentes Inteligentes e MSP de IA para sua empresa.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "Serviços de Automação e IA | Douglas Cuimar",
     description:
@@ -85,6 +87,7 @@ export default function ServicosPage() {
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Serviços", href: "/servicos" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">
@@ -147,6 +150,33 @@ export default function ServicosPage() {
                     </ul>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 lg:py-32 bg-surface-alt">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy text-center tracking-tighter mb-16">
+            Resultados dos{" "}
+            <span className="italic text-emerald">nossos clientes</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { metric: "40%", label: "Redução de faltas em clínicas" },
+              { metric: "60%", label: "Menos tempo de atendimento" },
+              { metric: "70%", label: "Redução de trabalho manual" },
+              { metric: "4x", label: "ROI médio em 12 meses" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-white p-8 rounded-[2rem] border border-slate-100 text-center"
+              >
+                <p className="text-4xl md:text-5xl font-black text-emerald mb-3">
+                  {item.metric}
+                </p>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.label}</p>
               </div>
             ))}
           </div>

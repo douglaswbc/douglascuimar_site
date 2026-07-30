@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contato",
   description:
     "Solicite um diagnóstico gratuito de automação e IA para sua empresa. Descubra quais processos podemos automatizar.",
+  alternates: { canonical: "./" },
   openGraph: {
     title: "Solicite um Diagnóstico Gratuito | Douglas Cuimar",
     description:
@@ -25,6 +28,7 @@ export default function ContatoPage() {
           url: "https://douglascuimar.com.br/contato",
         }}
       />
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contato", href: "/contato" }]} />
 
       <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-navy text-white relative overflow-hidden">
         <div className="absolute -bottom-48 -left-48 w-[600px] h-[600px] bg-emerald/10 blur-[150px] rounded-full" />
@@ -110,6 +114,46 @@ export default function ContatoPage() {
                 <ContactForm />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-surface-alt">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+          <h3 className="text-sm font-black text-emerald uppercase tracking-[0.4em] mb-6">
+            Explore também
+          </h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/servicos"
+              className="px-6 py-3 bg-white rounded-2xl text-navy font-bold border border-slate-100 hover:border-emerald/30 hover:text-emerald transition-all"
+            >
+              Serviços
+            </Link>
+            <Link
+              href="/setores"
+              className="px-6 py-3 bg-white rounded-2xl text-navy font-bold border border-slate-100 hover:border-emerald/30 hover:text-emerald transition-all"
+            >
+              Setores
+            </Link>
+            <Link
+              href="/blog"
+              className="px-6 py-3 bg-white rounded-2xl text-navy font-bold border border-slate-100 hover:border-emerald/30 hover:text-emerald transition-all"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/faq"
+              className="px-6 py-3 bg-white rounded-2xl text-navy font-bold border border-slate-100 hover:border-emerald/30 hover:text-emerald transition-all"
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/recursos"
+              className="px-6 py-3 bg-white rounded-2xl text-navy font-bold border border-slate-100 hover:border-emerald/30 hover:text-emerald transition-all"
+            >
+              Recursos
+            </Link>
           </div>
         </div>
       </section>

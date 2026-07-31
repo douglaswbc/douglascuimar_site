@@ -1,11 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export function ContactForm() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
+  const [lengths, setLengths] = useState({ name: 0, email: 0, phone: 0, company: 0 });
+
+  const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setLengths((prev) => ({ ...prev, [name]: value.length }));
+  }, []);
+
+  const canSubmit =
+    !sending &&
+    lengths.name >= 3 &&
+    lengths.email >= 5 &&
+    lengths.phone >= 10 &&
+    lengths.company >= 2;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,9 +81,13 @@ export function ContactForm() {
           type="text"
           name="name"
           required
+          minLength={3}
+          maxLength={80}
+          onChange={handleInput}
           className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
           placeholder="Seu nome completo"
         />
+        <p className="text-[9px] text-slate-400 text-right mr-2">{lengths.name}/80</p>
       </div>
 
       <div className="space-y-1">
@@ -81,9 +98,13 @@ export function ContactForm() {
           type="email"
           name="email"
           required
+          minLength={5}
+          maxLength={100}
+          onChange={handleInput}
           className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
           placeholder="seu@email.com.br"
         />
+        <p className="text-[9px] text-slate-400 text-right mr-2">{lengths.email}/100</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -95,9 +116,13 @@ export function ContactForm() {
             type="tel"
             name="phone"
             required
+            minLength={10}
+            maxLength={11}
+            onChange={handleInput}
             className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
             placeholder="(00) 00000-0000"
           />
+          <p className="text-[9px] text-slate-400 text-right mr-2">{lengths.phone}/11</p>
         </div>
         <div className="space-y-1">
           <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">
@@ -107,9 +132,13 @@ export function ContactForm() {
             type="text"
             name="company"
             required
+            minLength={2}
+            maxLength={80}
+            onChange={handleInput}
             className="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
             placeholder="Razão Social ou Fantasia"
           />
+          <p className="text-[9px] text-slate-400 text-right mr-2">{lengths.company}/80</p>
         </div>
       </div>
 
@@ -121,7 +150,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={sending}
+        disabled={!canSubmit}
         className="w-full bg-emerald text-white font-black py-6 rounded-2xl hover:bg-slate-800 transition-all shadow-2xl shadow-emerald/20 text-base uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed"
       >
         {sending ? "Enviando..." : "Receber Diagnóstico"}

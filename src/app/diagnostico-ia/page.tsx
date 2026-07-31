@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ProgressBar } from "./components/ProgressBar";
 import { ResultsView } from "./components/ResultsView";
-import { ReportTemplate } from "./components/ReportTemplate";
 import {
   QUESTIONS,
   STEP_ORDER,
@@ -33,7 +32,6 @@ export default function DiagnosticoIAPage() {
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
-  const reportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const savedAnswers = localStorage.getItem(STORAGE_KEY);
@@ -155,12 +153,11 @@ export default function DiagnosticoIAPage() {
   );
 
   const handleDownloadPDF = useCallback(async () => {
-    if (!reportRef.current || !results || !contactSubmitted) return;
+    if (!results || !contactSubmitted) return;
     setDownloading(true);
     setPdfError(false);
     try {
-      await new Promise((r) => setTimeout(r, 300));
-      await generatePDF(reportRef.current, results);
+      await generatePDF(results);
     } catch {
       setPdfError(true);
       setTimeout(() => setPdfError(false), 6000);
@@ -321,22 +318,6 @@ export default function DiagnosticoIAPage() {
             </a>
           </div>
         </section>
-
-        {hydrated && (
-          <div
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100%",
-              zIndex: -1,
-              opacity: 0,
-              pointerEvents: "none",
-            }}
-          >
-            <ReportTemplate ref={reportRef} result={results} />
-          </div>
-        )}
       </>
     );
   }

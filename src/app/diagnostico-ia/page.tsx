@@ -123,12 +123,33 @@ export default function DiagnosticoIAPage() {
         faturamento: answers["faturamento"] || "",
         overall_score: results.overallScore,
         maturity_level: results.maturityLabel,
+        maturity_key: results.maturityLevel,
         dimensions: results.dimensions.map((d) => ({
           dimension: d.label,
+          key: d.dimension,
           score: d.percentage,
+          description: d.description,
         })),
-        top_opportunities: results.opportunities.slice(0, 3).map((o) => o.title),
-        saved_hours_estimate: results.estimatedSavings.savedHours,
+        opportunities: results.opportunities.map((o) => ({
+          id: o.id,
+          title: o.title,
+          description: o.description,
+          impact: o.impact,
+          difficulty: o.difficulty,
+          priority: o.priority,
+          roi_estimate: o.roiEstimate,
+        })),
+        roadmap: results.roadmap.map((r) => ({
+          label: r.label,
+          timeframe: r.timeframe,
+          items: r.items,
+        })),
+        estimated_savings: {
+          current_hours: results.estimatedSavings.currentHours,
+          after_automation_hours: results.estimatedSavings.afterAutomationHours,
+          saved_hours: results.estimatedSavings.savedHours,
+          saved_percentage: results.estimatedSavings.savedPercentage,
+        },
         answers,
       };
 

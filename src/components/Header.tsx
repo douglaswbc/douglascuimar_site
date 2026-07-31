@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
+  { href: "/diagnostico-ia", label: "AI Scan®" },
   { href: "/servicos", label: "Serviços" },
   { href: "/setores", label: "Setores" },
   { href: "/blog", label: "Blog" },
@@ -33,7 +34,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-emerald transition-colors"
+              className={`hover:text-emerald transition-colors ${link.href === "/diagnostico-ia" ? "text-emerald font-black tracking-[0.3em]" : ""}`}
             >
               {link.label}
             </Link>

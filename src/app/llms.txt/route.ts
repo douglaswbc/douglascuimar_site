@@ -24,9 +24,9 @@ export function GET() {
 
 ## Blog
 
-- [Como automatizar o atendimento de uma clínica com IA](https://douglascuimar.com.br/blog/como-automatizar-clinica-com-ia): Redução de faltas, confirmação automática e pré-atendimento inteligente.
-- [Como integrar WhatsApp ao CRM](https://douglascuimar.com.br/blog/integrar-whatsapp-ao-crm): Guia prático com n8n para eliminar digitação manual.
-- [Como reduzir o tempo de atendimento em 60% com IA](https://douglascuimar.com.br/blog/reduzir-tempo-atendimento-com-ia): Cases reais de agentes de IA no atendimento.
+- [Como Automatizar o Atendimento de uma Clínica com IA em 2026](https://douglascuimar.com.br/blog/como-automatizar-atendimento-clinica-com-ia): Confirmação automática, pré-atendimento e recuperação de pacientes.
+- [Como integrar WhatsApp ao CRM](https://douglascuimar.com.br/blog/integrar-whatsapp-crm): Guia prático com webhook, n8n e IA.
+- [Como reduzir significativamente o tempo de atendimento com IA](https://douglascuimar.com.br/blog/reduzir-tempo-atendimento-com-ia): Diagnóstico, automação e indicadores de atendimento.
 - [Como criar um SDR virtual com IA](https://douglascuimar.com.br/blog/sdr-virtual-com-ia): Qualificação de leads e follow-up automático 24/7.
 - [Quanto custa implantar IA em uma empresa?](https://douglascuimar.com.br/blog/quanto-custa-implantar-ia): Guia completo de investimento e ROI por setor.
 - [Meta Business Agent vs Agente de IA Personalizado](https://douglascuimar.com.br/blog/meta-business-agent-vs-agente-personalizado): Comparativo técnico e quando investir.

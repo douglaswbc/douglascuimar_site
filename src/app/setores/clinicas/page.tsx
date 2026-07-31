@@ -146,7 +146,7 @@ export default function ClinicasPage() {
           <div className="text-center mt-16 mb-8">
             <p className="text-slate-400 text-sm mb-3">Quer se aprofundar?</p>
             <Link
-              href="/blog/como-automatizar-clinica-com-ia"
+              href="/blog/como-automatizar-atendimento-clinica-com-ia"
               className="text-navy font-bold hover:text-emerald transition-colors"
             >
               Leia o artigo completo sobre este tema →

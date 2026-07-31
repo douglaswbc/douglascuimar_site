@@ -9,12 +9,13 @@ export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
-}): Metadata {
-  const post = getPostBySlug(params.slug);
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   if (!post) {
     return {
       title: "Artigo não encontrado",
@@ -75,6 +76,19 @@ function renderContent(content: string) {
       continue;
     }
 
+    if (line.match(/^#{1,}\s/)) {
+      elements.push(
+        <p
+          key={i}
+          className="text-lg font-bold text-navy mt-6 mb-2"
+        >
+          {line.replace(/^#{1,}\s/, "")}
+        </p>
+      );
+      i++;
+      continue;
+    }
+
     if (line === "---") {
       elements.push(
         <hr key={i} className="my-8 border-slate-200" />
@@ -85,7 +99,7 @@ function renderContent(content: string) {
 
     if (line.startsWith("| ")) {
       const tableLines: string[] = [];
-      while (i < lines.length && lines[i].startsWith("| ")) {
+      while (i < lines.length && lines[i].startsWith("|")) {
         tableLines.push(lines[i]);
         i++;
       }
@@ -130,7 +144,7 @@ function renderContent(content: string) {
       continue;
     }
 
-    if (line.startsWith("1. ") || line.startsWith("2. ") || line.startsWith("3. ") || line.startsWith("4. ") || line.startsWith("5. ") || line.startsWith("6. ") || line.startsWith("7. ")) {
+    if (line.match(/^\d+\.\s/)) {
       const listItems: string[] = [];
       while (i < lines.length && (lines[i].match(/^\d+\.\s/) || lines[i] === "")) {
         if (lines[i].match(/^\d+\.\s/)) {

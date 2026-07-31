@@ -218,9 +218,10 @@ function renderContent(content: string) {
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -297,7 +298,7 @@ export default async function BlogPostPage({
           <h3 className="text-lg font-bold text-navy mb-4">Leia também</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {blogPosts
-              .filter((p) => p.slug !== params.slug)
+              .filter((p) => p.slug !== slug)
               .slice(0, 2)
               .map((related) => (
                 <Link

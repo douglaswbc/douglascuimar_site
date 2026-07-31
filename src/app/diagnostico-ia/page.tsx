@@ -264,11 +264,14 @@ export default function DiagnosticoIAPage() {
                     <input
                       type="text"
                       required
+                      minLength={3}
+                      maxLength={80}
                       value={contactName}
                       onChange={(e) => setContactName(e.target.value)}
                       className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
                       placeholder="Seu nome completo"
                     />
+                    <p className="text-[9px] text-slate-400 text-right mr-2">{contactName.length}/80</p>
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">
@@ -277,11 +280,14 @@ export default function DiagnosticoIAPage() {
                     <input
                       type="email"
                       required
+                      minLength={5}
+                      maxLength={100}
                       value={contactEmail}
                       onChange={(e) => setContactEmail(e.target.value)}
                       className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
                       placeholder="seu@email.com.br"
                     />
+                    <p className="text-[9px] text-slate-400 text-right mr-2">{contactEmail.length}/100</p>
                   </div>
                   <div className="space-y-1">
                     <label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-2">
@@ -290,11 +296,14 @@ export default function DiagnosticoIAPage() {
                     <input
                       type="tel"
                       required
+                      minLength={10}
+                      maxLength={11}
                       value={contactPhone}
                       onChange={(e) => setContactPhone(e.target.value)}
                       className="w-full px-5 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-emerald outline-none transition-all font-bold text-navy"
                       placeholder="(00) 00000-0000"
                     />
+                    <p className="text-[9px] text-slate-400 text-right mr-2">{contactPhone.length}/11</p>
                   </div>
 
                   {contactError && (
@@ -305,7 +314,12 @@ export default function DiagnosticoIAPage() {
 
                   <button
                     type="submit"
-                    disabled={contactSending || !contactName || !contactEmail || !contactPhone}
+                    disabled={
+                      contactSending ||
+                      contactName.length < 3 ||
+                      contactEmail.length < 5 ||
+                      contactPhone.length < 10
+                    }
                     className="w-full bg-emerald text-white font-black py-5 rounded-2xl hover:bg-emerald/90 transition-all shadow-2xl shadow-emerald/20 text-base uppercase tracking-widest disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {contactSending ? "Enviando..." : "Enviar e Baixar Relatório"}
